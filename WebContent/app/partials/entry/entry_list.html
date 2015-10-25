@@ -6,23 +6,17 @@
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<th>{{ 'entry.identry' | translate }}</th>
 						<th>{{ 'entry.title' | translate }}</th>
-						<th>{{ 'entry.storyDefinition' | translate }}</th>
-						<th>{{ 'entry.successFactory' | translate }}</th>
+						<th>{{ 'entry.entrytypeId' | translate }}</th>
 						<th>{{ 'entry.dateCreated' | translate }}</th>
-						<th>{{ 'entry.dateModified' | translate }}</th>
 						<th><a class="btn btn-info" href='#/entry/new'>{{ 'create' | translate }}</a></th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr ng-repeat="entry in entrys">
-						<td>{{entry.identry}}</td>
 						<td>{{entry.title}}</td>
-						<td>{{entry.storyDefinition}}</td>
-						<td>{{entry.successFactory}}</td>
+						<td>{{entry.entrytypeId}}</td>
 						<td>{{entry.dateCreated | date:'shortDate'}}</td>
-						<td>{{entry.dateModified | date:'shortDate'}}</td>
 						<td><a class="btn btn-info" href="#/entry/{{entry.identry}}">{{ 'edit' | translate }}</a></td>
 					</tr>
 				</tbody>
