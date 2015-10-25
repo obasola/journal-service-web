@@ -15,12 +15,7 @@ bookCategoryModule.factory('BookCategory', ['$http', 'restURL', function($http, 
      */
 	var validate = function (bookCategory) {
 		var errors = [];
-        if( bookCategory.bookId == null || bookCategory.bookId == '' ) {
-			errors.push('bookCategory.id.not.defined');
-		}
-        if( bookCategory.categoryId == null || bookCategory.categoryId == '' ) {
-			errors.push('bookCategory.id.not.defined');
-		}
+
 		if(errors.length > 0) {
 			throw errors;
 		}

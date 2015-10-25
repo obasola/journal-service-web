@@ -15,9 +15,7 @@ categoryModule.factory('Category', ['$http', 'restURL', function($http, restURL)
      */
 	var validate = function (category) {
 		var errors = [];
-        if( category.id == null || category.id == '' ) {
-			errors.push('category.id.not.defined');
-		}
+
 		if(errors.length > 0) {
 			throw errors;
 		}

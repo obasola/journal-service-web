@@ -15,12 +15,7 @@ bookPublisherModule.factory('BookPublisher', ['$http', 'restURL', function($http
      */
 	var validate = function (bookPublisher) {
 		var errors = [];
-        if( bookPublisher.publisherId == null || bookPublisher.publisherId == '' ) {
-			errors.push('bookPublisher.id.not.defined');
-		}
-        if( bookPublisher.bookId == null || bookPublisher.bookId == '' ) {
-			errors.push('bookPublisher.id.not.defined');
-		}
+
 		if(errors.length > 0) {
 			throw errors;
 		}

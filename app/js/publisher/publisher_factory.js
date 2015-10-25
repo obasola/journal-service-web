@@ -15,9 +15,7 @@ publisherModule.factory('Publisher', ['$http', 'restURL', function($http, restUR
      */
 	var validate = function (publisher) {
 		var errors = [];
-        if( publisher.id == null || publisher.id == '' ) {
-			errors.push('publisher.id.not.defined');
-		}
+ 
 		if(errors.length > 0) {
 			throw errors;
 		}

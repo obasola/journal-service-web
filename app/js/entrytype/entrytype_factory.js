@@ -15,9 +15,7 @@ entrytypeModule.factory('Entrytype', ['$http', 'restURL', function($http, restUR
      */
 	var validate = function (entrytype) {
 		var errors = [];
-        if( entrytype.id == null || entrytype.id == '' ) {
-			errors.push('entrytype.id.not.defined');
-		}
+
 		if(errors.length > 0) {
 			throw errors;
 		}

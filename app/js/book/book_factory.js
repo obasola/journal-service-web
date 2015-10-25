@@ -15,9 +15,7 @@ bookModule.factory('Book', ['$http', 'restURL', function($http, restURL) {
      */
 	var validate = function (book) {
 		var errors = [];
-        if( book.id == null || book.id == '' ) {
-			errors.push('book.id.not.defined');
-		}
+
 		if(errors.length > 0) {
 			throw errors;
 		}

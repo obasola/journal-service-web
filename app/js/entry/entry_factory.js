@@ -15,9 +15,7 @@ entryModule.factory('Entry', ['$http', 'restURL', function($http, restURL) {
      */
 	var validate = function (entry) {
 		var errors = [];
-        if( entry.identry == null || entry.identry == '' ) {
-			errors.push('entry.id.not.defined');
-		}
+
 		if(errors.length > 0) {
 			throw errors;
 		}
