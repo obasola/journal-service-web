@@ -1,0 +1,22 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'BookCategory' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'bookCategory.bookId' | translate }}</th>
+						<th>{{ 'bookCategory.categoryId' | translate }}</th>
+						<th><a class="btn btn-info" href='#/bookCategory/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="bookCategory in bookCategorys">
+						<td>{{bookCategory.bookId}}</td>
+						<td>{{bookCategory.categoryId}}</td>
+						<td><a class="btn btn-info" href="#/bookCategory/{{bookCategory.bookId}}/{{bookCategory.categoryId}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

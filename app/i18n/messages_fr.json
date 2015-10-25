@@ -1,0 +1,74 @@
+{
+	"welcome" : "Accueil",
+
+	"english" : "English",
+    "french" : "Fran\u00e7ais",	
+	
+	"create" : "Cr\u00e9er",
+	"edit" : "Modifier",
+	"delete" : "Supprimer",
+	"delete ok" : "Suppression r\u00e9ussie",
+	"save" : "Enregistrer",
+	"save ok" : "Enregistrement r\u00e9ussi",
+	"cancel" : "Annuler",
+
+	"Book" : "Book",
+	"book.id" : "id",
+	"book.isbn" : "isbn",
+	"book.title" : "title",
+	"book.subtitle" : "subtitle",
+	"book.abstractDescription" : "abstractDescription",
+	"book.numberPages" : "numberPages",
+	"book.author" : "author",
+	"book.id.not.defined" : "L'identfiant de Book n'est pas d\u00E9fini",
+
+	"BookCategory" : "BookCategory",
+	"bookCategory.bookId" : "bookId",
+	"bookCategory.categoryId" : "categoryId",
+	"bookCategory.id.not.defined" : "L'identfiant de BookCategory n'est pas d\u00E9fini",
+
+	"BookPublisher" : "BookPublisher",
+	"bookPublisher.publisherId" : "publisherId",
+	"bookPublisher.bookId" : "bookId",
+	"bookPublisher.id.not.defined" : "L'identfiant de BookPublisher n'est pas d\u00E9fini",
+
+	"Category" : "Category",
+	"category.id" : "id",
+	"category.name" : "name",
+	"category.id.not.defined" : "L'identfiant de Category n'est pas d\u00E9fini",
+
+	"Entry" : "Entry",
+	"entry.identry" : "identry",
+	"entry.title" : "title",
+	"entry.storyDefinition" : "storyDefinition",
+	"entry.successFactory" : "successFactory",
+	"entry.dateCreated" : "dateCreated",
+	"entry.dateModified" : "dateModified",
+	"entry.entrytypeId" : "entrytypeId",
+	"entry.id.not.defined" : "L'identfiant de Entry n'est pas d\u00E9fini",
+
+	"Entrytype" : "Entrytype",
+	"entrytype.id" : "id",
+	"entrytype.description" : "description",
+	"entrytype.id.not.defined" : "L'identfiant de Entrytype n'est pas d\u00E9fini",
+
+	"Person" : "Person",
+	"person.idperson" : "idperson",
+	"person.emailAddress" : "emailAddress",
+	"person.password" : "password",
+	"person.firstName" : "firstName",
+	"person.lastName" : "lastName",
+	"person.id.not.defined" : "L'identfiant de Person n'est pas d\u00E9fini",
+
+	"Publisher" : "Publisher",
+	"publisher.id" : "id",
+	"publisher.name" : "name",
+	"publisher.url" : "url",
+	"publisher.id.not.defined" : "L'identfiant de Publisher n'est pas d\u00E9fini",
+
+	"server.not.responding": "Le serveur ne r\u00e9pond pas",
+	"url.invalid": "URL invalide : {value}",
+	"url.bad": "URL incorrecte : {value}",
+
+	"app.version" : "Version"
+}

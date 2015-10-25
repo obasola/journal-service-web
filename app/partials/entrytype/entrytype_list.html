@@ -1,0 +1,22 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Entrytype' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'entrytype.id' | translate }}</th>
+						<th>{{ 'entrytype.description' | translate }}</th>
+						<th><a class="btn btn-info" href='#/entrytype/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="entrytype in entrytypes">
+						<td>{{entrytype.id}}</td>
+						<td>{{entrytype.description}}</td>
+						<td><a class="btn btn-info" href="#/entrytype/{{entrytype.id}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

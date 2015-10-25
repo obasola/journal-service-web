@@ -1,0 +1,74 @@
+{
+	"welcome" : "Welcome",
+	
+	"english" : "English",
+    "french" : "Fran\u00e7ais",
+	
+	"create" : "Create",
+	"edit" : "Edit",
+	"delete" : "Delete",
+	"delete ok" : "Delete ok",
+	"save" : "Save",
+	"save ok" : "Save ok",
+	"cancel" : "Cancel",
+
+	"Book" : "Book",
+	"book.id" : "id",
+	"book.isbn" : "isbn",
+	"book.title" : "title",
+	"book.subtitle" : "subtitle",
+	"book.abstractDescription" : "abstractDescription",
+	"book.numberPages" : "numberPages",
+	"book.author" : "author",
+	"book.id.not.defined" : "Book identifier is not defined",
+
+	"BookCategory" : "BookCategory",
+	"bookCategory.bookId" : "bookId",
+	"bookCategory.categoryId" : "categoryId",
+	"bookCategory.id.not.defined" : "BookCategory identifier is not defined",
+
+	"BookPublisher" : "BookPublisher",
+	"bookPublisher.publisherId" : "publisherId",
+	"bookPublisher.bookId" : "bookId",
+	"bookPublisher.id.not.defined" : "BookPublisher identifier is not defined",
+
+	"Category" : "Category",
+	"category.id" : "id",
+	"category.name" : "name",
+	"category.id.not.defined" : "Category identifier is not defined",
+
+	"Entry" : "Entry",
+	"entry.identry" : "identry",
+	"entry.title" : "title",
+	"entry.storyDefinition" : "storyDefinition",
+	"entry.successFactory" : "successFactory",
+	"entry.dateCreated" : "dateCreated",
+	"entry.dateModified" : "dateModified",
+	"entry.entrytypeId" : "entrytypeId",
+	"entry.id.not.defined" : "Entry identifier is not defined",
+
+	"Entrytype" : "Entrytype",
+	"entrytype.id" : "id",
+	"entrytype.description" : "description",
+	"entrytype.id.not.defined" : "Entrytype identifier is not defined",
+
+	"Person" : "Person",
+	"person.idperson" : "idperson",
+	"person.emailAddress" : "emailAddress",
+	"person.password" : "password",
+	"person.firstName" : "firstName",
+	"person.lastName" : "lastName",
+	"person.id.not.defined" : "Person identifier is not defined",
+
+	"Publisher" : "Publisher",
+	"publisher.id" : "id",
+	"publisher.name" : "name",
+	"publisher.url" : "url",
+	"publisher.id.not.defined" : "Publisher identifier is not defined",
+	
+	"server.not.responding": "The server is not responding",
+	"url.invalid": "Invalid URL : {value}",
+	"url.bad": "Bad URL : {value}",
+
+	"app.version" : "Version"
+}
