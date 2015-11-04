@@ -37,7 +37,7 @@
 	"category.name" : "name",
 	"category.id.not.defined" : "Category identifier is not defined",
 
-	"Entry" : "Entry",
+	"Entry" : "Journal",
 	"entry.identry" : "ID",
 	"entry.title" : "Title",
 	"entry.storyDefinition" : "Definition",

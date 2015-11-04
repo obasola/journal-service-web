@@ -17,3 +17,77 @@
 	background: url("../img/logo.png") 0 5px no-repeat;
 	padding-left: 73px;
 }
+
+.brownText{
+	color:#000000;
+	font-size: 14pt;
+}
+.topHeader{
+	margin-top: 0.5em;
+}
+ 
+.brandText{
+	FONT-FAMILY: Arial, Helvetica, sans-serif;	
+	color: #589c34;
+	font-size: 16pt;
+}
+.labelText{
+	FONT-FAMILY: Arial, Helvetica, sans-serif;	
+	color: #589c34;
+	font-size: 12pt;
+}
+
+.brandHeader{
+	FONT-FAMILY: Arial, Helvetica, sans-serif;	
+	margin-top: 1.5em;
+	background-color: #4C9041;	
+	color: #FFFFFF;																																																					
+}
+.brandSectionHeading{
+	FONT-FAMILY: Arial, Helvetica, sans-serif;	
+	background-color: #4C9041;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: #CCE0E9;
+}
+#hideRow{
+	display: none;
+}
+
+.checkmark {
+	margin-left: 5px;
+	height: 40px;
+	width: 40px;
+}
+.dataGridHeader {
+	background-color: #4C9041;
+	color: #FFFFFF;
+}
+.table-striped > tbody > tr:hover > td {
+    background-color: #FFF202;
+}
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #7AC142;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #4C9041;
+  border-color: #4C9041;
+ }
+ .btn-primary:active, .btn-primary.active {
+    background: #4C9041;
+    box-shadow: none;
+}
+
+.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open > .dropdown-toggle.btn-info {
+  color: #fff;
+  background-color: #7AC142;
+  border-color: #7AC142;
+ }
+ .btn-info:active, .btn-info.active {
+    background: #7AC142;
+    box-shadow: none;
+}

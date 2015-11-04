@@ -29,8 +29,14 @@ var myApp = angular.module('myApp', [
   ,'entrytype.module'
   ,'person.module'
   ,'publisher.module'
+  ,'angular-growl'
 ]);
 
+myApp.controller('HeaderController',['$rootScope', function($rootScope) {
+	this.isAdminUser = function() {
+		return false;
+	};
+}]);
 /**
  * Main configuration
  */
