@@ -1,18 +1,49 @@
 
-	<h3>
-		{{ 'welcome' | translate }}
-	</h3>
+<div ng-include src="'partials/message-include.html'"></div>
 
-	<div ng-include src="'partials/message-include.html'"></div>
-   		      
-	<ul class="entity">
-        <li><a href="#/book">{{ 'Book' | translate }}</a></li>
-        <li><a href="#/bookCategory">{{ 'BookCategory' | translate }}</a></li>
-        <li><a href="#/bookPublisher">{{ 'BookPublisher' | translate }}</a></li>
-        <li><a href="#/category">{{ 'Category' | translate }}</a></li>
-        <li><a href="#/entry">{{ 'Entry' | translate }}</a></li>
-        <li><a href="#/entrytype">{{ 'Entrytype' | translate }}</a></li>
-        <li><a href="#/person">{{ 'Person' | translate }}</a></li>
-        <li><a href="#/publisher">{{ 'Publisher' | translate }}</a></li>
-    </ul>
-  
+<form>
+
+<br/>
+<div class="row">
+	<div class="col-xs-6">
+		<p style="margin-top: 1.5em; ">			
+				The purpose of this journal is to record daily techinques, facts, algorithms, and other useful but obscure bits of information
+				I encounter during the working day that will most likely need repeating at some point days (or months) later. Additionally, this
+				tool also offers a great way of capturing and consolidating data and information gathered from various "google-ing" sessions as
+				well as online tutorials of all kinds. It also provides a means of extracting and re-packing tips, tricks, and techniques captured from
+				various computer books on programming, web development, software design, and project planinning just to name a few areas of
+				personal interest and on-going study. The intent of this site to take the amassed information and after proper massaging repackage
+				and display it in a meaniful way for further edification. This site will continue to evolve as I learn other techniques specific to web 
+				design and development using AngularJS and BootStrap.
+		</p>
+	</div>
+	<div class="col-xs-6">
+		<img src="img/acientScrolls1.jpg"   width="100%"  style="margin-top: -0.7em;"/>
+	</div>
+</div>
+
+<br/>
+<div class="row" ng-controller="NavControl">
+
+	<div class="col-xs-4 well well-sm">
+		<h3>Books</h3>
+		<p>View a list of existing books listed previuosly or log a new book</p>
+		<a class="btn btn-info" href="#/book">View Books</a>
+	</div>
+	
+	<div class="col-xs-4  well well-sm">
+		<h3>Journal Entries</h3>
+		<p>Record new journal entries or view and edit previous entries </p>
+		<a class="btn btn-info" href="#/entry">View Journal</a>
+	</div>
+	
+	<div class="col-xs-4 well well-sm">
+		<h3>Notes</h3>
+		<p>Record detailed notes by category or review previously entered notes</p>
+		<a class="btn btn-info" href="#/note">View Notes</a>
+	</div>
+	
+</div>    
+ 
+</form>
+

@@ -1,34 +1,34 @@
-.entity li {
-	margin: 5px;
-	font-size: 1.2em;
-}
-.entity li a {
-	display: block;
-	width: 200px;
-	height: 30px;
-}
-.entity li a:hover {
-	color: #cc4444;
-}
-.languages {
-	float: right;
-}
-.logo {
-	background: url("../img/logo.png") 0 5px no-repeat;
-	padding-left: 73px;
-}
-.scrollBG {
-	background-image:  url("../img/emptyScroll2.jpg")  no repeat;
-	
-}
 .brownText{
 	color:#000000;
 	font-size: 14pt;
 }
 .topHeader{
+	margin-top: 1.5em;
+}
+.blueText{
+	color: #146287;
+}
+.blueHeader{
+	margin-top: 1.5em;
+	background-color: #146287;	
+	color: #FFFFFF;																																																					
+}
+.dataGridHeader {
+	background-color: #81ABD1;
+	color: #FFFFFF;
+}
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: #CCE0E9;
+}
+#hideRow{
+	display: none;
+}
+/** Page Layout chANGES **/
+.topHeader{
 	margin-top: 0.5em;
 }
- 
+/** Begin: titleBucks-specific styling **/
 .brandText{
 	FONT-FAMILY: Arial, Helvetica, sans-serif;	
 	color: #589c34;
@@ -50,6 +50,7 @@
 	FONT-FAMILY: Arial, Helvetica, sans-serif;	
 	background-color: #4C9041;
 }
+/** Begin: titleBucks-specific styling **/
 
 .table-striped > tbody > tr:nth-child(odd) > td,
 .table-striped > tbody > tr:nth-child(odd) > th {
