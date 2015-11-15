@@ -8,7 +8,7 @@ var messageHandler = angular.module('messageHandler.module', []);
 /**
  * Factory for messages handler
  */
-messageHandler.factory('MessageHandler',['$rootScope', function($rootScope) {
+messageHandler.factory('MessageHandler',['$rootScope', 'growl', function($rootScope, growl) {
 
     // message
     $rootScope.message = {};
@@ -36,6 +36,7 @@ messageHandler.factory('MessageHandler',['$rootScope', function($rootScope) {
     $this.addSuccess = function(success, values) {
         var messageValues = $this.getMessageValues(values);
         $rootScope.message.successs.push({message: success, values: messageValues});
+        growl.success(success);
     };
 
     /**
@@ -44,6 +45,7 @@ messageHandler.factory('MessageHandler',['$rootScope', function($rootScope) {
     $this.addError = function(error, values) {
         var messageValues = $this.getMessageValues(values);
         $rootScope.message.errors.push({message: error, values: messageValues});
+        growl.error(error);
     };
 
     /**
@@ -51,6 +53,7 @@ messageHandler.factory('MessageHandler',['$rootScope', function($rootScope) {
      */
     $this.addServerError = function(serverError) {
         $rootScope.message.serverErrors.push(serverError);
+        growl.error(serverError);
     };
 
     /**

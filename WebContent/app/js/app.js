@@ -30,7 +30,14 @@ var myApp = angular.module('myApp', [
   ,'person.module'
   ,'publisher.module'
   ,'angular-growl'
+  ,'anguFixedHeaderTable'
 ]);
+myApp.controller('NavControl', ['$scope','$location', function($scope,$location) {
+
+	$scope.go = function(path) {
+			$location.path = path;
+	}
+}]);
 
 myApp.controller('HeaderController',['$rootScope', function($rootScope) {
 	this.isAdminUser = function() {
@@ -43,4 +50,7 @@ myApp.controller('HeaderController',['$rootScope', function($rootScope) {
 myApp.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/', {templateUrl: 'partials/welcome.html'});
   $routeProvider.otherwise({redirectTo: '/'});
+}]);
+myApp.config(['growlProvider', function(growlProvider) {
+	  growlProvider.globalTimeToLive(4000);
 }]);
