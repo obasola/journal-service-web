@@ -7,27 +7,27 @@
 
 	<table class="table table-striped"  fixed-header table-height="450px">
 		<thead>
-			<tr class="brandHeader">
-				<th>{{ 'book.id' | translate }}</th>
+			<tr class="brandHeader">			    				 
 				<th>{{ 'book.isbn' | translate }}</th>
+				<th>{{ 'book.author' | translate }}</th>
 				<th>{{ 'book.title' | translate }}</th>
 				<th>{{ 'book.subtitle' | translate }}</th>
 				<th>{{ 'book.abstractDescription' | translate }}</th>
 				<th>{{ 'book.numberPages' | translate }}</th>
-				<th>{{ 'book.author' | translate }}</th>
+				
 				<th><a class="btn btn-info" href='#/book/new'>{{ 'create' |
 						translate }}</a></th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr ng-repeat="book in books">
-				<td>{{book.id}}</td>
-				<td>{{book.isbn}}</td>
+			    <td>{{book.isbn}}</td>
+			    <td>{{book.author}}</td>				 				
 				<td>{{book.title}}</td>
 				<td>{{book.subtitle}}</td>
-				<td>{{book.abstractDescription}}</td>
+				<td>{{ book.abstractDescription | limitTo: 40 }}{{book.abstractDescription.length > 40 ? '...' : ''}}</td>
 				<td>{{book.numberPages | number }}</td>
-				<td>{{book.author}}</td>
+				
 				<td><a class="btn btn-info" href="#/book/{{book.id}}">{{
 						'edit' | translate }}</a></td>
 			</tr>

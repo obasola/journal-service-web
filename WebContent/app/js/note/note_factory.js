@@ -3,7 +3,7 @@
 /**
  * Factory for Entry
  */
-entryModule.factory('Entry', ['$http', 'restURL', function($http, restURL) {
+noteModule.factory('Note', ['$http', 'restURL', function($http, restURL) {
 
 	// REST Service URL to manage entry
     var entityURL = restURL + '/entry';
@@ -54,7 +54,7 @@ entryModule.factory('Entry', ['$http', 'restURL', function($http, restURL) {
          * @return entry saved
          */
 		create: function(entry) {
-			entry.entrySubType = 'J';
+			entry.entrySubType = 'N';
 			validate(entry)
 			var url = entityURL;
 			return $http.post(url, entry);
@@ -66,7 +66,7 @@ entryModule.factory('Entry', ['$http', 'restURL', function($http, restURL) {
          * @return entry saved
          */
     	update: function(entry) {
-			validate(entry)
+			validate(entry);
 			var url = entityURL + '/' + entry.identry;
 			return $http.put(url, entry);
     	},

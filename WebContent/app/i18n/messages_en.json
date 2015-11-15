@@ -46,6 +46,17 @@
 	"entry.dateModified" : "Modified",
 	"entry.entrytypeId" : "Type",
 	"entry.id.not.defined" : "Entry identifier is not defined",
+	
+	"Note" : "Note",
+	"note.identry" : "ID",
+	"note.title" : "Title",
+	"note.storyDefinition" : "Definition",
+	"note.successFactory" : "Success Criteria",
+	"note.dateCreated" : "Created",
+	"note.dateModified" : "Modified",
+	"note.entrytypeId" : "Type",
+	"note.id.not.defined" : "Note identifier is not defined",
+	
 
 	"Entrytype" : "Entrytype",
 	"entrytype.id" : "id",

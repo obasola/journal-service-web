@@ -1,0 +1,31 @@
+
+<br/>
+
+	<h3>List Notes</h3>
+	<div class="container">
+		<div growl></div>
+			
+			<table class="table table-striped"  fixed-header table-height="450px">
+				<thead>
+					<tr class="brandHeader">
+						<th>{{ 'note.title' | translate }}</th>
+						<th>{{ 'note.entrytypeId' | translate }}</th>
+						<th>{{ 'note.dateCreated' | translate }}</th>
+						<th style="float:right"><a class="btn btn-info" href='#/note/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="note in notes | filter: {entrySubType : 'N' } ">
+						<td>{{note.title}}</td>
+						<td>{{note.entrytypeId}}</td>
+						<td>{{note.dateCreated | date:'shortDate'}}</td>
+						<td><a class="btn btn-info" href="#/note/{{entry.identry}}">{{ 'edit' | translate }}</a></td>
+						
+					</tr>
+			 		
+				</tbody>
+			</table>
+			<div ng-hide="notes.length ">
+			 			<p >No notes recorded at this time</p>
+			</div>
+</div>

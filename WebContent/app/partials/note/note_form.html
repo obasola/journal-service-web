@@ -1,0 +1,44 @@
+	<div class="col-zs-12 lead brandHeader scrollBG">Edit Note</div>
+	<div class="container">
+		
+		<form class="well form-horizontal">
+			
+			<div class="form-group">
+			
+				<label for="entry_title" class="col-sm-2 control-label">{{ 'note.title' | translate }}</label>
+				<div class="col-sm-10">
+					<input type="text" id="entry_title" name="title" ng-model="note.title" class="form-control" maxLength="100" />
+				</div>
+				
+				<label for="entry_entrytypeId" class="col-sm-2 control-label">{{ 'note.entrytypeId' | translate }}</label>
+				<div class="col-sm-10">
+                    <select id="entry_entrytypeId" ng-model="note.entrytypeId" name="entrytypeId" class="form-control">
+						<option value=""></option>
+                        <option ng-repeat="entrytype in items.entrytypes" title="{{entrytype.label}}" ng-selected="{{entrytype.value == note.entrytypeId}}" value="{{entrytype.value}}">{{entrytype.label}}</option>
+                    </select>
+				</div>
+			</div>
+			
+			<div class="form-group">
+			
+				<label for="entry_storyDefinition" class="col-sm-2 control-label">{{ 'note.storyDefinition' | translate }}</label>
+				<div class="col-sm-10">
+					<textarea id="entry_storyDefinition" name="storyDefinition" ng-model="note.storyDefinition" class="form-control" rows="10"></textarea>
+				</div>
+			</div>
+
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<a role="button" class="btn btn-danger btn-block" ng-click="delete(note.identry)" ng-show="mode != 'create'">{{ 'delete' | translate }}</a>
+				</div>
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/note">{{ 'cancel' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">{{ 'save' | translate }}</button>
+				</div>
+			</div>
+		</form>
+			
+</div>

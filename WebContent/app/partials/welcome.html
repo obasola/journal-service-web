@@ -23,21 +23,21 @@
 </div>
 
 <br/>
-<div class="row" ng-controller="NavControl">
+<div class="row" >
 
-	<div class="col-xs-4 well well-sm">
+	<div class="col-xs-4 well well-sm" ng-controller="BookCtrl as bookCtrl">
 		<h3>Books</h3>
 		<p>View a list of existing books listed previuosly or log a new book</p>
 		<a class="btn btn-info" href="#/book">View Books</a>
 	</div>
 	
-	<div class="col-xs-4  well well-sm">
+	<div class="col-xs-4  well well-sm" ng-controller="EntryCtrl as entryCtrl">
 		<h3>Journal Entries</h3>
 		<p>Record new journal entries or view and edit previous entries </p>
 		<a class="btn btn-info" href="#/entry">View Journal</a>
 	</div>
 	
-	<div class="col-xs-4 well well-sm">
+	<div class="col-xs-4 well well-sm" ng-controller="NoteCtrl as noteCtrl">
 		<h3>Notes</h3>
 		<p>Record detailed notes by category or review previously entered notes</p>
 		<a class="btn btn-info" href="#/note">View Notes</a>

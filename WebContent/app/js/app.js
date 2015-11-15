@@ -25,6 +25,7 @@ var myApp = angular.module('myApp', [
   ,'bookCategory.module'
   ,'bookPublisher.module'
   ,'category.module'
+  ,'note.module'
   ,'entry.module'
   ,'entrytype.module'
   ,'person.module'
