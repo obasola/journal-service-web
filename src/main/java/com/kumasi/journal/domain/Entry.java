@@ -44,7 +44,8 @@ public class Entry implements Serializable {
     @NotNull
     private Integer entrytypeId;
 
-
+    @NotNull
+    private String   entrySubType;
 
     //----------------------------------------------------------------------
     // GETTER & SETTER FOR THE KEY FIELD
@@ -108,7 +109,15 @@ public class Entry implements Serializable {
     // toString METHOD
     //----------------------------------------------------------------------
  
-        public String toString() { 
+        public String getEntrySubType() {
+		return entrySubType;
+	}
+
+	public void setEntrySubType(String entrySubType) {
+		this.entrySubType = entrySubType;
+	}
+
+		public String toString() { 
         StringBuffer sb = new StringBuffer(); 
 
         sb.append(title);

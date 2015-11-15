@@ -26,7 +26,9 @@ import javax.persistence.*;
 @Table(name="Entry", catalog="Journal" )
 // Define named queries here
 @NamedQueries ( {
-  @NamedQuery ( name="EntryEntity.countAll", query="SELECT COUNT(x) FROM EntryEntity x" )
+  @NamedQuery ( name="EntryEntity.countAll", query="SELECT COUNT(x) FROM EntryEntity x" ),
+  @NamedQuery ( name="EntryEntity.getAllJournalEntries", query="SELECT x  FROM EntryEntity x where x.entrySubType = 'J' " ),
+  @NamedQuery ( name="EntryEntity.getAllNoteEntries", query="SELECT x  FROM EntryEntity x where x.entrySubType = 'N' " )
 } )
 public class EntryEntity implements Serializable {
 
@@ -61,6 +63,9 @@ public class EntryEntity implements Serializable {
     @Column(name="date_modified")
     private Date       dateModified ;
 
+    @Column(name="entry_subtype", nullable=false)
+    private String   entrySubType;
+    
 	// "entrytypeId" (column "EntryType_id") is not defined by itself because used as FK in a link 
 
 
@@ -144,7 +149,15 @@ public class EntryEntity implements Serializable {
     }
 
 
-    //----------------------------------------------------------------------
+    public String getEntrySubType() {
+		return entrySubType;
+	}
+
+	public void setEntrySubType(String entrySubType) {
+		this.entrySubType = entrySubType;
+	}
+
+	//----------------------------------------------------------------------
     // toString METHOD
     //----------------------------------------------------------------------
     public String toString() { 

@@ -36,6 +36,7 @@ public class BookEntity implements Serializable {
     // ENTITY PRIMARY KEY ( BASED ON A SINGLE FIELD )
     //----------------------------------------------------------------------
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name="id", nullable=false)
     private Integer    id           ;
 
@@ -52,7 +53,7 @@ public class BookEntity implements Serializable {
     @Column(name="subtitle", length=250)
     private String     subtitle     ;
 
-    @Column(name="abstract_description", length=255)
+    @Column(name="abstract_description")
     private String     abstractDescription ;
 
     @Column(name="number_pages")
