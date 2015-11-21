@@ -5,10 +5,11 @@
 package com.kumasi.journal.domain;
 
 import java.io.Serializable;
-
-import javax.validation.constraints.*;
-
 import java.util.Date;
+
+import javax.persistence.Transient;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 public class Entry implements Serializable {
 
@@ -47,6 +48,8 @@ public class Entry implements Serializable {
     @NotNull
     private String   entrySubType;
 
+    @Transient
+    private Entrytype entryType;
     //----------------------------------------------------------------------
     // GETTER & SETTER FOR THE KEY FIELD
     //----------------------------------------------------------------------
@@ -104,12 +107,20 @@ public class Entry implements Serializable {
         return this.entrytypeId;
     }
 
-
+    
     //----------------------------------------------------------------------
     // toString METHOD
     //----------------------------------------------------------------------
  
-        public String getEntrySubType() {
+        public Entrytype getEntryType() {
+		return entryType;
+	}
+
+	public void setEntryType(Entrytype entryType) {
+		this.entryType = entryType;
+	}
+
+		public String getEntrySubType() {
 		return entrySubType;
 	}
 

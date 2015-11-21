@@ -7,7 +7,9 @@ package com.kumasi.journal.business.service.mapping;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.stereotype.Component;
+
 import com.kumasi.journal.domain.Entry;
+import com.kumasi.journal.domain.Entrytype;
 import com.kumasi.journal.domain.jpa.EntryEntity;
 import com.kumasi.journal.domain.jpa.EntrytypeEntity;
 
@@ -45,6 +47,10 @@ public class EntryServiceMapper extends AbstractServiceMapper {
 		//--- Link mapping ( link to Entrytype )
 		if(entryEntity.getEntrytype() != null) {
 			entry.setEntrytypeId(entryEntity.getEntrytype().getId());
+			Entrytype etype = new Entrytype();
+			etype.setDescription(entryEntity.getEntrytype().getDescription());
+			etype.setId(entryEntity.getEntrytype().getId());
+			entry.setEntryType(etype);
 		}
 		return entry;
 	}
