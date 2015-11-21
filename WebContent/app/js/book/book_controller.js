@@ -3,7 +3,7 @@
 /**
  * Controller for Book
  **/
-bookModule.controller('BookCtrl', ['Book',  'Publisher', 'Category', '$scope', '$routeParams', '$http', '$location', '$cookies', 'MessageHandler', 'restURL', function(Book, Publisher, Category, $scope, $routeParams, $http, $location, $cookies, MessageHandler, restURL) {
+bookModule.controller('BookCtrl', ['Book',  'Publisher', 'Category', '$scope', '$state', '$stateParams', '$http', '$location', '$cookies', 'MessageHandler', 'restURL', function(Book, Publisher, Category, $scope, $state, $stateParams, $http, $location, $cookies, MessageHandler, restURL) {
 	 'Publisher',  'Category',     // edition mode
     $scope.mode = null;
     
@@ -18,6 +18,14 @@ bookModule.controller('BookCtrl', ['Book',  'Publisher', 'Category', '$scope', '
 	$scope.items.publishers = [];
     // categorys
 	$scope.items.categorys = [];
+	
+	//** functions
+	$scope.getBook = function(id) {
+		$stateParams.id = id;
+		$scope.loadAllReferencies();
+		$scope.refreshBook($stateParams.id);
+		
+	}
 
     /**
      * Load all referencies entities
@@ -59,6 +67,7 @@ bookModule.controller('BookCtrl', ['Book',  'Publisher', 'Category', '$scope', '
 	        Book.get(id).then(
 				function(success) {
         	        $scope.book = success.data;
+        	        $state.go('editBook');
             	}, 
 	            MessageHandler.manageError);
     	  } catch(ex) {
@@ -129,10 +138,10 @@ bookModule.controller('BookCtrl', ['Book',  'Publisher', 'Category', '$scope', '
         $scope.mode = 'create';
 		$scope.loadAllReferencies();
         $scope.bookorderitem = null;
-    } else if( $routeParams.id != null ) {
+    } else if( $state.params.id != null ) {
         // Edit page
 		$scope.loadAllReferencies();
-		$scope.refreshBook($routeParams.id);
+		$scope.refreshBook($state.params.id);
     } else {
         // List page
         $scope.refreshBookList();

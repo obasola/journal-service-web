@@ -10,6 +10,7 @@ if (typeof String.prototype.endsWith !== 'function') {
 // Declare app level module which depends on filters, and services
 var myApp = angular.module('myApp', [
    'ngRoute'
+  ,'ui.router'
   ,'ngResource' 
   ,'ngCookies'
   ,'i18n'
@@ -32,12 +33,20 @@ var myApp = angular.module('myApp', [
   ,'publisher.module'
   ,'angular-growl'
   ,'anguFixedHeaderTable'
+
 ]);
-myApp.controller('NavControl', ['$scope','$location', function($scope,$location) {
+myApp.controller('NavController', ['$scope','$location', function($scope,$location) {
 
 	$scope.go = function(path) {
 			$location.path = path;
 	}
+	$scope.getClass = function (path) {
+		  if ($location.path().substr(0, path.length) === path) {
+		    return 'active';
+		  } else {
+		    return '';
+		  }
+		}
 }]);
 
 myApp.controller('HeaderController',['$rootScope', function($rootScope) {
@@ -48,10 +57,28 @@ myApp.controller('HeaderController',['$rootScope', function($rootScope) {
 /**
  * Main configuration
  */
-myApp.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/', {templateUrl: 'partials/welcome.html'});
-  $routeProvider.otherwise({redirectTo: '/'});
+
+myApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('/');
+ 
+    $stateProvider
+        .state('home', {
+            url:'/',
+            templateUrl: 'partials/welcome.html',
+            controller: 'NavController'
+        })
+        .state('profile', {
+            url:'/profile',
+            templateUrl: 'partials/profile.html',
+            controller: 'NavController'
+        })
+        .state('about', {
+            url:'/about',
+            templateUrl: 'partials/about.html',
+            controller: 'NavController'
+        })
 }]);
+
 myApp.config(['growlProvider', function(growlProvider) {
 	  growlProvider.globalTimeToLive(4000);
 }]);

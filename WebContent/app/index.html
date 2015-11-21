@@ -48,11 +48,11 @@
 				</a>
 			</div>
 			<!-- Collection of nav links and other content for toggling -->
-			<div id="navbarCollapse" class="collapse navbar-collapse">
+			<div id="navbarCollapse" class="collapse navbar-collapse" ng-controller="NavController">
 				<ul class="nav navbar-nav navbar-right">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#">Profile</a></li>
-					<li><a href="#">Messages</a></li>
+					<li><a href="#"  ng-class="getActive('/Home')">Home</a></li>
+					<li><a ui-sref="listEntries"  ng-class="getActive('/listEntries')">Journal</a></li>
+					<li><a ui-sref="listNotes"  ng-class="getActive('/listNotes')">Notes</a></li>
 
 					<li><a href="#">Login</a></li>
 				</ul>
@@ -66,7 +66,7 @@
 		<div  style="width:100%">
 			<div class="inner" growl></div>
 		</div>
-		<div ng-view></div>
+		<div ui-view></div>
 		<div style="position: relative">
 			<div
 				style="position: fixed; bottom: 0; width: 100%; text-align: center">
@@ -86,6 +86,8 @@
   	-->
 	<script src="lib/angular/angular.js"></script>
 	<script src="lib/angular/angular-route.js"></script>
+	<script src="lib/angular-ui-router.js"></script>
+	
 	<script src="lib/angular/angular-resource.js"></script>
 	<script src="lib/angular/angular-cookies.js"></script>
 	<script src="lib/angular/angular-animate.js"></script>

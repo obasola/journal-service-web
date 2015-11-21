@@ -13,3 +13,28 @@ categoryModule.config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/category/new', {templateUrl: 'partials/category/category_form.html', controller: 'CategoryCtrl'});
     $routeProvider.when('/category/:id', {templateUrl: 'partials/category/category_form.html', controller: 'CategoryCtrl'});
 }]);
+
+categoryModule.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('/bookPublisher');
+    // Pages routes
+    $stateProvider
+    
+	    .state('listCategory',    {
+	    	url:'/category',
+	    	templateUrl: 'partials/category/category_list.html',
+	    	controller: 'CategoryCtrl'
+	    })
+	    	
+	    .state('createCategory', {
+	    	url:'/category/new',
+	    	templateUrl: 'partials/category/category_form.html', 
+	    	controller: 'CategoryCtrl'
+	    })
+	    	
+	    .state('editCategory', {
+	    	url:'/category/:id',
+	    	templateUrl: 'partials/category/category_form.html', 
+	    	controller: 'CategoryCtrl'
+	    })
+	    
+}]);

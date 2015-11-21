@@ -7,9 +7,27 @@ var bookPublisherModule = angular.module('bookPublisher.module', ['myApp']);
 /**
  * Module for bookPublisher
  */
-bookPublisherModule.config(['$routeProvider', function($routeProvider) {
+
+
+bookPublisherModule.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('/bookPublisher');
     // Pages routes
-    $routeProvider.when('/bookPublisher',    {templateUrl: 'partials/bookpublisher/bookpublisher_list.html', controller: 'BookPublisherCtrl'});
-    $routeProvider.when('/bookPublisher/new', {templateUrl: 'partials/bookpublisher/bookpublisher_form.html', controller: 'BookPublisherCtrl'});
-    $routeProvider.when('/bookPublisher/:publisherId/:bookId', {templateUrl: 'partials/bookpublisher/bookpublisher_form.html', controller: 'BookPublisherCtrl'});
+    $stateProvider
+	    .state('listBookPublishers',    {
+	    	url:'/bookPublisher',
+	    	templateUrl: 'partials/bookpublisher/bookpublisher_list.html',
+	    	controller: 'BookPublisherCtrl'
+	    })
+	    	
+	    .state('recordBookPublisher', {
+	    	url:'/bookPublisher/new',
+	    	templateUrl: 'partials/bookpublisher/bookpublisher_form.html', 
+	    	controller: 'BookPublisherCtrl'
+	    })
+	    	
+	    .state('editBookPublisher', {
+	    	url:'/bookPublisher/:publisherId/:bookId',
+	    	templateUrl: 'partials/bookcategory/bookcategory_form.html', 
+	    	controller: 'BookPublisherCtrl'
+	    })
 }]);

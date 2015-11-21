@@ -3,7 +3,7 @@
 /**
  * Controller for Entry
  **/
-entryModule.controller('EntryCtrl', ['Entry',  'Entrytype', '$scope', '$routeParams', '$http', '$location', '$cookies', 'MessageHandler', 'restURL', function(Entry, Entrytype, $scope, $routeParams, $http, $location, $cookies, MessageHandler, restURL) {
+entryModule.controller('EntryCtrl', ['Entry',  'Entrytype', '$scope', '$state', '$stateParams', '$http', '$location', '$cookies', 'MessageHandler', 'restURL', function(Entry, Entrytype, $scope, $state, $stateParams, $http, $location, $cookies, MessageHandler, restURL) {
 	 'Entrytype',     // edition mode
     $scope.mode = null;
     
@@ -122,10 +122,10 @@ entryModule.controller('EntryCtrl', ['Entry',  'Entrytype', '$scope', '$routePar
         $scope.mode = 'create';
 		$scope.loadAllReferencies();
         $scope.bookorderitem = null;
-    } else if( $routeParams.identry != null ) {
+    } else if( $state.params.id != null ) {
         // Edit page
 		$scope.loadAllReferencies();
-		$scope.refreshEntry($routeParams.identry);
+		$scope.refreshEntry($state.params.id);
     } else {
         // List page
         $scope.refreshEntryList();

@@ -5,7 +5,7 @@
 	<div class="container">
 		<div growl></div>
 			
-			<table class="table table-striped"  fixed-header table-height="450px">
+			<table class="table table-striped  table-hover"  fixed-header table-height="450px">
 				<thead>
 					<tr class="brandHeader">
 						<th>{{ 'entry.title' | translate }}</th>
@@ -15,11 +15,11 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="entry in entrys">
+					<tr ng-repeat="entry in entrys | filter : {entrySubType : 'J' }   ">
 						<td>{{entry.title}}</td>
-						<td>{{entry.entrytypeId}}</td>
+						<td>{{entry.entryType.id}}</td>
 						<td>{{entry.dateCreated | date:'shortDate'}}</td>
-						<td><a class="btn btn-info" href="#/entry/{{entry.identry}}">{{ 'edit' | translate }}</a></td>
+						<td><a class="btn btn-info" ui-sref="editEntry({id: {{entry.identry}} })">{{ 'edit' | translate }}</a></td>
 					</tr>
 				</tbody>
 			</table>

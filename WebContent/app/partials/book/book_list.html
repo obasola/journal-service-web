@@ -15,8 +15,7 @@
 				<th>{{ 'book.abstractDescription' | translate }}</th>
 				<th>{{ 'book.numberPages' | translate }}</th>
 				
-				<th><a class="btn btn-info" href='#/book/new'>{{ 'create' |
-						translate }}</a></th>
+				<th><a class="btn btn-info" href='#/book/new'>{{ 'create' | translate }}</a></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -28,8 +27,7 @@
 				<td>{{ book.abstractDescription | limitTo: 40 }}{{book.abstractDescription.length > 40 ? '...' : ''}}</td>
 				<td>{{book.numberPages | number }}</td>
 				
-				<td><a class="btn btn-info" href="#/book/{{book.id}}">{{
-						'edit' | translate }}</a></td>
+				<td><a class="btn btn-info" ui-sref="editBook({id: {{book.id}} }) " >{{'edit' | translate }}</a></td>
 			</tr>
 		</tbody>
 	</table>

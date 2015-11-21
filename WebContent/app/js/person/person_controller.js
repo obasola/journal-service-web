@@ -3,7 +3,7 @@
 /**
  * Controller for Person
  **/
-personModule.controller('PersonCtrl', ['Person',  '$scope', '$routeParams', '$http', '$location', '$cookies', 'MessageHandler', 'restURL', function(Person, $scope, $routeParams, $http, $location, $cookies, MessageHandler, restURL) {
+personModule.controller('PersonCtrl', ['Person',  '$scope', '$stateParams', '$http', '$location', '$cookies', 'MessageHandler', 'restURL', function(Person, $scope, $stateParams, $http, $location, $cookies, MessageHandler, restURL) {
 	    // edition mode
     $scope.mode = null;
     
@@ -115,10 +115,10 @@ personModule.controller('PersonCtrl', ['Person',  '$scope', '$routeParams', '$ht
         $scope.mode = 'create';
 		$scope.loadAllReferencies();
         $scope.bookorderitem = null;
-    } else if( $routeParams.idperson != null ) {
+    } else if( $stateParams.idperson != null ) {
         // Edit page
 		$scope.loadAllReferencies();
-		$scope.refreshPerson($routeParams.idperson);
+		$scope.refreshPerson($stateParams.idperson);
     } else {
         // List page
         $scope.refreshPersonList();

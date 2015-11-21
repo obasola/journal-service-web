@@ -7,9 +7,24 @@ var publisherModule = angular.module('publisher.module', ['myApp']);
 /**
  * Module for publisher
  */
-publisherModule.config(['$routeProvider', function($routeProvider) {
+
+publisherModule.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('/publisher');
     // Pages routes
-    $routeProvider.when('/publisher',    {templateUrl: 'partials/publisher/publisher_list.html', controller: 'PublisherCtrl'});
-    $routeProvider.when('/publisher/new', {templateUrl: 'partials/publisher/publisher_form.html', controller: 'PublisherCtrl'});
-    $routeProvider.when('/publisher/:id', {templateUrl: 'partials/publisher/publisher_form.html', controller: 'PublisherCtrl'});
+    $stateProvider    
+	    .state('listPublishers',    {
+	    	url:'/publisher',
+	    	templateUrl: 'partials/publisher/publisher_list.html',
+	    	controller: 'PublisherCtrl'
+	    })	    	
+	    .state('createPublisher', {
+	    	url:'/publisher/new',
+	    	templateUrl: 'partials/publisher/publisher_form.html', 
+	    	controller: 'PublisherCtrl'
+	    })	    	
+	    .state('editPublisher', {
+	    	url:'/publisher/:id',
+	    	templateUrl: 'partials/publisher/publisher_form.html', 
+	    	controller: 'PublisherCtrl'
+	    })
 }]);

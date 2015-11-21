@@ -3,7 +3,7 @@
 /**
  * Controller for Entry
  **/
-noteModule.controller('NoteCtrl', ['Note',  'Entrytype', '$scope', '$routeParams', '$http', '$location', '$cookies', 'MessageHandler', 'restURL', function(Note, Entrytype, $scope, $routeParams, $http, $location, $cookies, MessageHandler, restURL) {
+noteModule.controller('NoteCtrl', ['Note',  'Entrytype', '$scope', '$state', '$stateParams', '$http', '$location', '$cookies', 'MessageHandler', 'restURL', function(Note, Entrytype, $scope, $state, $stateParams, $http, $location, $cookies, MessageHandler, restURL) {
 	 'Entrytype',     // edition mode
     $scope.mode = null;
     
@@ -49,7 +49,7 @@ noteModule.controller('NoteCtrl', ['Note',  'Entrytype', '$scope', '$routeParams
     $scope.refreshEntry = function(identry) {
     	try {
         	$scope.note = null;
-	        Entry.get(identry).then(
+        	Note.get(identry).then(
 				function(success) {
         	        $scope.note = success.data;
             	}, 
@@ -122,10 +122,10 @@ noteModule.controller('NoteCtrl', ['Note',  'Entrytype', '$scope', '$routeParams
         $scope.mode = 'create';
 		$scope.loadAllReferencies();
         $scope.bookorderitem = null;
-    } else if( $routeParams.identry != null ) {
+    } else if( $state.params.id != null ) {
         // Edit page
 		$scope.loadAllReferencies();
-		$scope.refreshEntry($routeParams.identry);
+		$scope.refreshEntry($state.params.id);
     } else {
         // List page
         $scope.refreshEntryList();
