@@ -19,7 +19,7 @@
 						<td>{{entry.title}}</td>
 						<td>{{entry.entryType.id}}</td>
 						<td>{{entry.dateCreated | date:'shortDate'}}</td>
-						<td><a class="btn btn-info" ui-sref="editEntry({id: {{entry.identry}} })">{{ 'edit' | translate }}</a></td>
+						<td><a class="btn btn-info" ui-sref="viewEntry({id: {{entry.identry}} })">{{ 'view' | translate }}</a></td>
 					</tr>
 				</tbody>
 			</table>

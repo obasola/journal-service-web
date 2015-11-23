@@ -1,0 +1,40 @@
+	<div class="col-zs-12 lead brandHeader scrollBG">View Note</div>
+	<div class="container">
+		
+		<form class="well form-horizontal">
+			
+			<div class="container">
+				<dl>
+					<dt>Title</dt>
+					<dd>{{entry.title}}</dd>
+					
+					<dt>Type</dt>
+					<dd>{{entry.entryType.description}}</dd>
+					
+					<dt>Comments</dt>
+					<dd>
+						<div style="overflow:scroll; height: 300px; width: 95%;">
+							<pre>{{entry.storyDefinition}}</pre>
+							<h5>Misc</h5>
+							<pre>{{entry.successFactory}}</pre>
+						</div>
+					</dd>
+				</dl>				
+			</div>
+			
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				 <div class="col-sm-6"></div>
+    			<div class="col-sm-2">
+					<a role="button" class="btn btn-info btn-block" href="#/entry">{{ 'cancel' | translate }}</a>
+				</div>
+				<div class="col-sm-2">
+					<a role="button" class="btn btn-info btn-block" href="#/entry">{{ 'next' | translate }}</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-block" ng-click="save()">{{ 'edit' | translate }}</button>
+				</div>
+			</div>
+		</form>
+			
+</div>

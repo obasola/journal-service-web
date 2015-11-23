@@ -31,5 +31,10 @@ entryModule.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
 	    	templateUrl: 'partials/entry/entry_form.html', 
 	    	controller: 'EntryCtrl'
 	    })
+	    .state('viewEntry', {
+	    	url:'/entry/profile/:id',
+	    	templateUrl: 'partials/entry/entry_profile.html',
+	    	controller: 'EntryCtrl'
+	    })
 	    
 }]);
