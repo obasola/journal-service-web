@@ -17,6 +17,8 @@ noteModule.controller('NoteCtrl', ['Note',  'Entrytype', '$scope', '$state', '$s
     // entrytypes
 	$scope.items.entrytypes = [];
 
+	$scope.currentNoteId = $stateParams.id;
+	
     /**
      * Load all referencies entities
      */
@@ -92,6 +94,7 @@ noteModule.controller('NoteCtrl', ['Note',  'Entrytype', '$scope', '$state', '$s
     	        function(success) {
 	                MessageHandler.addSuccess('save ok');
                 	$scope.note = success.data;
+                	$scope.note = {};
             	},
         	    MessageHandler.manageError);
     	} catch(ex) {

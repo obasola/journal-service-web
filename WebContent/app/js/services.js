@@ -9,4 +9,5 @@ var myAppServices = angular.module('myApp.services', ['ngResource', 'ngCookies']
 myAppServices.value('version', '0.1');
 
 // Base URL for REST Services on the Spring MVC webapp
-myAppServices.value('restURL', 'http://localhost:8001/journal-service/rest');
+//myAppServices.value('restURL', 'http://localhost:8081/journal-service/rest');
+myAppServices.value('restURL', 'http://kumasi.net:8081/journal-service/rest');

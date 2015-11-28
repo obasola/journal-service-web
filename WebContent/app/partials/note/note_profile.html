@@ -1,36 +1,35 @@
-	<div class="col-zs-12 lead brandHeader scrollBG">View Note</div>
-	<div class="container">
-		
-		<form class="well form-horizontal">
-			
-			<div class="container">
-				<dl>
-					<dt>Title</dt>
-					<dd>{{note.title}}</dd>
-					
-					<dt>Type</dt>
-					<dd>{{note.entryType.description}}</dd>
-					
-					<dt>Comments</dt>
-					<dd>
+	
+	<div class="container"><br/>
+		<div class="col-zs-12 lead brandHeader scrollBG">View Note {{currentNoteId}}</div>
+		<form class="well form-horizontal" style="margin-top: -1.5em;">
+
+					<div class="form-group">
+						<label class="labelText">Title</label>
+						<p>{{note.title}}</p>
+					</div>
+					<div class="form-group">
+						<label class="labelText">Category</label>
+						<p>{{note.entryType.description}}</p>
+					</div>
+					<div class="form-group">
+						<label class="labelText">Comments</label>
 						<div style="overflow:scroll; height: 300px; width: 95%;">
-							<pre>{{note.storyDefinition}}</pre>
-						</div>
-					</dd>
-				</dl>				
-			</div>
+								<pre>{{note.storyDefinition}}</pre>
+							</div>
+					</div>
+
 			
 			<!-- ACTION BUTTONS -->
 			<div class="form-group">
 				 <div class="col-sm-6"></div>
     			<div class="col-sm-2">
-					<a role="button" class="btn btn-info btn-block" href="#/note">{{ 'cancel' | translate }}</a>
+					<a role="button" class="btn btn-info btn-block" href="#/note">Cancel</a>
 				</div>
 				<div class="col-sm-2">
-					<a role="button" class="btn btn-info btn-block" href="#/note">{{ 'next' | translate }}</a>
+					<a role="button" class="btn btn-info btn-block" ui-sref="viewNote({{currentNoteId}} + 1)">Next</a>
 				</div>
     			<div class="col-sm-2">
-					<button type="submit" class="btn btn-primary btn-block" ng-click="save()">{{ 'edit' | translate }}</button>
+					<a role="button" class="btn btn-info btn-block" href="#/note/{{currentNoteId}}">Edit</a>
 				</div>
 			</div>
 		</form>
