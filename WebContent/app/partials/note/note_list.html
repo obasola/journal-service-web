@@ -4,18 +4,18 @@
 	<h3>List Notes</h3>
 	<div class="container">
 		<div growl></div>
-			<div class="" style="float:right"> <label>Search</</label><input type="text" ng-model="searchBox"/></div>
+			<div class="" style="float:right"> <label>Search</</label><input type="text" ng-model="filter.title"/></div>
 			<table class="table table-striped table-hover"  fixed-header table-height="450px">
 				<thead>
 					<tr class="brandHeader">
-						<th>{{ 'note.title' | translate }}</th>
-						<th>{{ 'note.entrytypeId' | translate }}</th>
-						<th>{{ 'note.dateCreated' | translate }}</th>
-						<th style="float:right"><a class="btn btn-info" href='#/note/new'>{{ 'create' | translate }}</a></th>
+						<th>Title</th>
+						<th>Type</th>
+						<th>Created</th>
+						<th style="float:right"><a class="btn btn-info" href='#/note/new'>New Note</a></th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="note in notes | filter: {entrySubType : 'N' }   ">
+					<tr ng-repeat="note in notes | filter: {entrySubType : 'N' } | filter: {title: filter.title} ">
 						<td>{{note.title}}</td>
 						<td>{{note.entryType.description}}</td>
 						<td>{{note.dateCreated | date:'shortDate'}}</td>

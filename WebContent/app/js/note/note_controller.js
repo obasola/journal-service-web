@@ -17,8 +17,20 @@ noteModule.controller('NoteCtrl', ['Note',  'Entrytype', '$scope', '$state', '$s
     // entrytypes
 	$scope.items.entrytypes = [];
 
-	$scope.currentNoteId = $stateParams.id;
+	if($stateParams.id != null && $stateParams.id != undefined) {
+		$scope.currentNoteId = $stateParams.id;
+	}
 	
+	
+	$scope.viewNote = function(id) {
+		alert('next clicked');
+	};
+	$scope.showNextElement = function() {
+		if($scope.currentNoteId != undefined && $scope.currentNoteId != null) {
+			$scope.currentNoteId++;
+			$scope.refreshEntry($scope.currentNoteId);
+		}
+	}
     /**
      * Load all referencies entities
      */
@@ -53,7 +65,12 @@ noteModule.controller('NoteCtrl', ['Note',  'Entrytype', '$scope', '$state', '$s
         	$scope.note = null;
         	Note.get(identry).then(
 				function(success) {
-        	        $scope.note = success.data;
+					if(success.data.length <= 0) {
+						MessageHandler.addError('No data found for request.')
+					}else{
+						$scope.note = success.data;
+					}
+        	        
             	}, 
 	            MessageHandler.manageError);
     	  } catch(ex) {

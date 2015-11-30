@@ -5,26 +5,17 @@
 			
 			<div class="form-group">
 			
-				<label for="entry_title" class="col-sm-2 control-label labelText">Title</label>
-				<div class="col-sm-10">
-					<input type="text" id="entry_title" name="title" ng-model="note.title" class="form-control" maxLength="100" />
-				</div>
+				<p class="col-sm-12 formLabel">Title</p>
+				<input type="text" id="entry_title" name="title" ng-model="note.title" class="form-control" maxLength="100" />
 				
-				<label for="entry_entrytypeId" class="col-sm-2 control-label labelText">Type</label>
-				<div class="col-sm-10">
-                    <select id="entry_entrytypeId" ng-model="note.entrytypeId" name="entrytypeId" class="form-control">
+				<p class="col-sm-12 formLabel">Type</p>
+                <select id="entry_entrytypeId" ng-model="note.entrytypeId" name="entrytypeId" class="form-control">
 						<option value=""></option>
                         <option ng-repeat="entrytype in items.entrytypes" title="{{entrytype.label}}" ng-selected="{{entrytype.value == note.entrytypeId}}" value="{{entrytype.value}}">{{entrytype.label}}</option>
-                    </select>
-				</div>
-			</div>
+               </select>					
 			
-			<div class="form-group">
-			
-				<label for="entry_storyDefinition" class="col-sm-2 control-label labelText">Definition</label>
-				<div class="col-sm-10">
-					<textarea id="entry_storyDefinition" name="storyDefinition" ng-model="note.storyDefinition" class="form-control" rows="10"></textarea>
-				</div>
+			   <p class="col-sm-12 formLabel">Definition</label>
+			   <textarea id="entry_storyDefinition" name="storyDefinition" ng-model="note.storyDefinition" class="form-control" rows="10"></textarea>
 			</div>
 
 			<!-- ACTION BUTTONS -->

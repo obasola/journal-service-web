@@ -67,6 +67,11 @@ myApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $
             templateUrl: 'partials/welcome.html',
             controller: 'NavController'
         })
+        .state('book', {
+        	url:'/book',
+        	templateUrl: 'partials/book/book_list.html',
+        	controller: 'BookController'
+        })
         .state('profile', {
             url:'/profile',
             templateUrl: 'partials/profile.html',

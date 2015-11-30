@@ -50,9 +50,9 @@
 			<!-- Collection of nav links and other content for toggling -->
 			<div id="navbarCollapse" class="collapse navbar-collapse" ng-controller="NavController">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#"  ng-class="getActive('/Home')">Home</a></li>
-					<li><a ui-sref="listEntries"  ng-class="getActive('/listEntries')">Journal</a></li>
-					<li><a ui-sref="listNotes"  ng-class="getActive('/listNotes')">Notes</a></li>
+					<li><a ui-sref="listBooks"  ng-class="getClass('/book')">Books</a></li>
+					<li><a ui-sref="listEntries"  ng-class="getClass('/listEntries')">Journal</a></li>
+					<li><a ui-sref="listNotes"  ng-class="getClass('/listNotes')">Notes</a></li>
 
 					<li><a href="#">Login</a></li>
 				</ul>

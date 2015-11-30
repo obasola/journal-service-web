@@ -40,7 +40,14 @@
 	font-size: 12pt;
 	font-weight:bold;
 }
-
+.formLabel{
+	FONT-FAMILY: Arial, Helvetica, sans-serif;	
+	color: #589c34;
+	font-size: 12pt;
+	font-weight:bold;
+	margin-left: -1.0em;
+	text-align: left;
+}
 .brandHeader{
 	FONT-FAMILY: Arial, Helvetica, sans-serif;	
 	margin-top: 1.5em;

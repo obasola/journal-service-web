@@ -33,4 +33,17 @@ noteModule.config(['$stateProvider', '$urlRouterProvider', function($stateProvid
 	    	templateUrl: 'partials/note/note_profile.html',
 	    	controller: 'NoteCtrl'
 	    })
+	    .state('nextNote', {
+	    	url: 'note/next/:id',
+	    	params : {id: null,},
+	    	templateUrl:'partials/note/note_profile.html',
+	    	controller: function($http, $stateParams) {
+	    		var controller = this;
+	    		var newUrl = 'rest/entry/'+ $stateParams.id + 1;
+	    		$http({method: 'GET', url: newUrl}).success(function(data) {
+	    			controller.note = data;
+	    		})
+	    		
+	    	}
+	    })
 }]);
