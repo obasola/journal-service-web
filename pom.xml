@@ -16,6 +16,12 @@
 		</dependency>
 
 		<!-- Insert contents of : pom_dependencies_common.txt -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.0</version>
+		</dependency>
+
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
