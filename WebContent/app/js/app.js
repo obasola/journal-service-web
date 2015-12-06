@@ -11,6 +11,7 @@ if (typeof String.prototype.endsWith !== 'function') {
 var myApp = angular.module('myApp', [
    'ngRoute'
   ,'ui.router'
+  ,'ui.bootstrap'
   ,'ngResource' 
   ,'ngCookies'
   ,'i18n'
@@ -33,6 +34,7 @@ var myApp = angular.module('myApp', [
   ,'publisher.module'
   ,'angular-growl'
   ,'anguFixedHeaderTable'
+  
 
 ]);
 myApp.controller('NavController', ['$scope','$location', function($scope,$location) {

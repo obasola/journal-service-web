@@ -1,35 +1,48 @@
-	<div class="col-zs-12 lead brandHeader scrollBG">Edit Note</div>
-	<div class="container">
-		
-		<form class="well form-horizontal">
-			
-			<div class="form-group">
-			
-				<p class="col-sm-12 formLabel">Title</p>
-				<input type="text" id="entry_title" name="title" ng-model="note.title" class="form-control" maxLength="100" />
-				
-				<p class="col-sm-12 formLabel">Type</p>
-                <select id="entry_entrytypeId" ng-model="note.entrytypeId" name="entrytypeId" class="form-control">
-						<option value=""></option>
-                        <option ng-repeat="entrytype in items.entrytypes" title="{{entrytype.label}}" ng-selected="{{entrytype.value == note.entrytypeId}}" value="{{entrytype.value}}">{{entrytype.label}}</option>
-               </select>					
-			
-			   <p class="col-sm-12 formLabel">Definition</label>
-			   <textarea id="entry_storyDefinition" name="storyDefinition" ng-model="note.storyDefinition" class="form-control" rows="10"></textarea>
-			</div>
 
-			<!-- ACTION BUTTONS -->
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-2">
-					<a role="button" class="btn btn-danger btn-block" ng-click="delete(note.identry)" ng-show="mode != 'create'">Delete</a>
-				</div>
-    			<div class="col-sm-offset-4 col-sm-2">
-					<a role="button" class="btn btn-default btn-block" href="#/note">Cancel</a>
-				</div>
-    			<div class="col-sm-2">
-					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">Save</button>
-				</div>
+<div class="col-zs-12 lead brandHeader scrollBG">Edit Note</div>
+<div class="container">
+
+	<form class="well form-horizontal">
+
+		<div class="form-group">
+
+			<p class="col-sm-12 formLabel">Title</p>
+			<input type="text" id="entry_title" name="title"
+				ng-model="note.title" class="form-control" maxLength="100" />
+
+			<p class="col-sm-12 formLabel">Type</p>
+			<select id="entry_entrytypeId" ng-model="note.entrytypeId"
+				name="entrytypeId" class="form-control">
+				<option value=""></option>
+				<option ng-repeat="entrytype in items.entrytypes"
+					title="{{entrytype.label}}"
+					ng-selected="{{entrytype.value == note.entrytypeId}}"
+					value="{{entrytype.value}}">{{entrytype.label}}</option>
+			</select>
+
+			<p class="col-sm-12 formLabel">
+				Definition</label>
+				<textarea id="entry_storyDefinition" name="storyDefinition"
+					ng-model="note.storyDefinition" class="form-control" rows="10"></textarea>
+		</div>
+
+		<!-- ACTION BUTTONS -->
+		<div class="form-group">
+			<div class="col-sm-2">
+				<button type="submit" class="btn btn_info" ng-click="open()" ng-controller="EntrytypeCtrl">New Type</button>
 			</div>
-		</form>
-			
+			<div class="col-sm-2">
+				<a role="button" class="btn btn-danger btn-block"
+					ng-click="delete(note.identry)" ng-show="mode != 'create'">Delete</a>
+			</div>
+			<div class="col-sm-offset-4 col-sm-2">
+				<a role="button" class="btn btn-default btn-block" href="#/note">Cancel</a>
+			</div>
+			<div class="col-sm-2">
+				<button type="submit" class="btn btn-primary btn-lg btn-block"
+					ng-click="save()">Save</button>
+			</div>
+		</div>
+	</form>
+
 </div>

@@ -46,4 +46,9 @@ noteModule.config(['$stateProvider', '$urlRouterProvider', function($stateProvid
 	    		
 	    	}
 	    })
+	    .state('newCategory', {
+	    	url:'/entrytype/new',
+	    	templateUrl: 'partials/entrytype/entrytype_form.html', 
+	    	controller: 'EntrytypeCtrl'
+	    })	
 }]);

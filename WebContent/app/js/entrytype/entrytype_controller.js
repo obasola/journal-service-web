@@ -3,7 +3,7 @@
 /**
  * Controller for Entrytype
  **/
-entrytypeModule.controller('EntrytypeCtrl', ['Entrytype',  '$scope', '$routeParams', '$http', '$location', '$cookies', 'MessageHandler', 'restURL', function(Entrytype, $scope, $routeParams, $http, $location, $cookies, MessageHandler, restURL) {
+entrytypeModule.controller('EntrytypeCtrl', ['Entrytype',  '$scope', '$routeParams', '$http', '$location', '$cookies', 'MessageHandler', 'restURL', '$uibModal', function(Entrytype, $scope, $routeParams, $http, $location, $cookies, MessageHandler, restURL, $uibModal) {
 	    // edition mode
     $scope.mode = null;
     
@@ -105,6 +105,24 @@ entrytypeModule.controller('EntrytypeCtrl', ['Entrytype',  '$scope', '$routePara
         } catch(ex) {
             MessageHandler.manageException(ex);
         }
+    };
+    // provide support for Modal Window
+    $scope.animationsEnabled = true;
+
+    $scope.open = function (size) {
+      var modalInstance = $uibModal.open({
+        animation: $scope.animationsEnabled,
+        templateUrl: '/journal-service-web/app/partials/misc/modal/entryTypeSetup.html',
+        controller: 'EntrytypeCtrl',
+        size: size
+      });      
+    };
+    $scope.ok = function () {
+       $uibModalInstance.close($scope.selected.item);
+    };
+
+    $scope.cancel = function () {
+       $uibModalInstance.dismiss('cancel');
     };
     
     // Main

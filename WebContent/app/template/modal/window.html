@@ -1,0 +1,41 @@
+<div modal-render="{{$isRendered}}" tabindex="-1" role="dialog" class="modal"
+    uib-modal-animation-class="fade"
+    modal-in-class="in"
+    ng-style="{'z-index': 1050 + index*10, display: 'block'}">
+    <div class="modal-dialog" ng-class="size ? 'modal-' + size : ''">
+    	<div class="modal-content" uib-modal-transclude>
+    	<div class="modal-body">
+			<form class="well form-horizontal">			
+			<div class="form-group">
+				<p class="col-sm-12 formLabel">Title</p>
+				<input type="text" id="entry_title" name="title" ng-model="entry.title" class="form-control" maxLength="100" />
+	
+				<p class="col-sm-12 formLabel" >Type</p>
+                <select id="entry_entrytypeId" ng-model="entry.entrytypeId" name="entrytypeId" class="form-control">
+					<option value=""></option>
+                    <option ng-repeat="entrytype in items.entrytypes" title="{{entrytype.label}}" ng-selected="{{entrytype.value == entry.entrytypeId}}" value="{{entrytype.value}}">{{entrytype.label}}</option>
+                </select>
+
+				<label for="entry_storyDefinition" class="col-sm-12 formLabel">Definition</label>
+				<textarea id="entry_storyDefinition" name="storyDefinition" ng-model="entry.storyDefinition" class="form-control" rows="5"></textarea>
+
+				<label for="entry_successFactory" class="col-sm-12 formLabel" >Additional</label>
+				<textarea id="entry_successFactory" name="successFactory" ng-model="entry.successFactory" class="form-control" rows="5"></textarea>			
+			</div>
+			<div class="form-group">				
+    			<div class="col-sm-offset-4 col-sm-2">
+					<a role="button" class="btn btn-default btn-block" href="#/entry">Cancel</a>
+				</div>
+    			<div class="col-sm-2">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="save()">Save</button>
+				</div>
+			</div>
+			</form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok()">Close</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    	</div>
+    </div>
+</div>

@@ -3,7 +3,10 @@
 /**
  * Controller for Entry
  **/
-noteModule.controller('NoteCtrl', ['Note',  'Entrytype', '$scope', '$state', '$stateParams', '$http', '$location', '$cookies', 'MessageHandler', 'restURL', function(Note, Entrytype, $scope, $state, $stateParams, $http, $location, $cookies, MessageHandler, restURL) {
+noteModule.controller('NoteCtrl', ['Note',  'Entrytype', '$scope', '$state', '$stateParams', '$http', '$location', 
+                                   '$cookies', 'MessageHandler', 'restURL', '$uibModal', 
+                      function(Note, Entrytype, $scope, $state, $stateParams, $http, $location, 
+                    		  $cookies, MessageHandler, restURL,$uibModal) {
 	 'Entrytype',     // edition mode
     $scope.mode = null;
     

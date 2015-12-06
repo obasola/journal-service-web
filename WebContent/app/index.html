@@ -18,11 +18,11 @@
     margin: 0 auto;
 }
 </style>
-<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-<link href="css/bootstrap-theme.min.css" rel="stylesheet"
-	type="text/css" />
-<link href="css/bootstrap-datepicker.css" rel="stylesheet"
-	type="text/css" />
+<!-- link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" / -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"/>
+<link href="css/bootstrap-theme.min.css" rel="stylesheet"   type="text/css" />
+<link href="css/bootstrap-datepicker.css" rel="stylesheet"	type="text/css" />
 <link href="css/app.css" rel="stylesheet" type="text/css" />
 <link href="css/custom_layout.css" rel="stylesheet" type="text/css" />
 <link href="css/custom_bootstrap.css" rel="stylesheet" type="text/css" />
@@ -35,12 +35,12 @@
 		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
-				<button type="button" data-target="#navbarCollapse"
-					data-toggle="collapse" class="navbar-toggle"
-					data-target=".navbar-collapse">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
+				<button type="button" class="navbar-toggle"
+					data-toggle="collapse"  data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span> 
+					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span>
 				</button>
 				<a href="#" class="navbar-brand "> <i class="fa fa-edit"
 					style="font-size: 18pt; font-color: red; background-color: wheat"></i>My
@@ -48,15 +48,15 @@
 				</a>
 			</div>
 			<!-- Collection of nav links and other content for toggling -->
-			<div id="navbarCollapse" class="collapse navbar-collapse" ng-controller="NavController">
-				<ul class="nav navbar-nav navbar-right">
+	
+				<ul class="nav navbar-nav navbar-right collapse navbar-collapse">
 					<li><a ui-sref="listBooks"  ng-class="getClass('/book')">Books</a></li>
 					<li><a ui-sref="listEntries"  ng-class="getClass('/listEntries')">Journal</a></li>
 					<li><a ui-sref="listNotes"  ng-class="getClass('/listNotes')">Notes</a></li>
 
 					<li><a href="#">Login</a></li>
 				</ul>
-			</div>
+		
 		</div>
 	</nav>
 
@@ -84,13 +84,13 @@
 	<!-- In production use:
   	<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   	-->
-	<script src="lib/angular/angular.js"></script>
-	<script src="lib/angular/angular-route.js"></script>
+	<script src="lib/angular-1.4.7/angular.js"></script>
+	<script src="lib/angular-1.4.7/angular-route.js"></script>
 	<script src="lib/angular-ui-router.js"></script>
 	
-	<script src="lib/angular/angular-resource.js"></script>
-	<script src="lib/angular/angular-cookies.js"></script>
-	<script src="lib/angular/angular-animate.js"></script>
+	<script src="lib/angular-1.4.7/angular-resource.js"></script>
+	<script src="lib/angular-1.4.7/angular-cookies.js"></script>
+	<script src="lib/angular-1.4.7/angular-animate.js"></script>
 	<script src="lib/angular-translate/angular-translate.js"></script>
 	<script src="lib/angular-translate/angular-translate-storage-cookie.js"></script>
 	<script src="lib/angular-translate/angular-translate-storage-local.js"></script>
@@ -99,6 +99,10 @@
 	<script src="lib/angular-dynamic-locale/tmhDynamicLocale.js"></script>
 	<script src="lib/angular-strap/angular-strap.min.js"></script>
 	<script src="lib/angular-strap/angular-strap.tpl.min.js"></script>
+	<!-- script src="lib/bower_components/angular-bootstrap/ui-bootstrap.js"></script -->
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.js"></script>
 	
 	<script src="lib/bower_components/angular-growl-v2/angular-growl.js"></script>
 	<script src="lib/bower_components/angu-fixed-header-table/angu-fixed-header-table.js"></script>
